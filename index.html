@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحدي الولايات التونسية - Tunisia States Challenge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>تحدي الولايات التونسية</h1>
+            <p>انقر على الشاشة لزيادة نقاط ولايتك!</p>
+            <div id="user-location">جاري تحديد موقعك...</div>
+        </header>
+
+        <main>
+            <div id="click-area">
+                <div id="click-counter">0</div>
+                <p>انقر هنا!</p>
+            </div>
+
+            <div id="scoreboard">
+                <h2>لوحة النتائج</h2>
+                <div id="scores-list"></div>
+            </div>
+        </main>
+
+        <div id="error-message" class="hidden"></div>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+        import { getDatabase } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js';
+        
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "tunisia-states-challenge.firebaseapp.com",
+            databaseURL: "https://tunisia-states-challenge-default-rtdb.firebaseio.com",
+            projectId: "tunisia-states-challenge",
+            storageBucket: "tunisia-states-challenge.appspot.com",
+            messagingSenderId: "123456789",
+            appId: "1:123456789:web:abcdef123456"
+        };
+        
+        window.firebaseApp = initializeApp(firebaseConfig);
+        window.database = getDatabase(window.firebaseApp);
+    </script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
